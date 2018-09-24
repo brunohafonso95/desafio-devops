@@ -9,14 +9,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class Site2ApplicationTests {
-	WebDriver driver = null;
+    public static String driverpath = "/root/chromedriver";
+
+
+    WebDriver driver = null;
 
     @Before
     public void abrirNavegador() {
         System.out.println("abrindo navegador");
         // setando caminho do driver
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", driverpath);
         // iniciando webdriver do chrome
         driver = new ChromeDriver();
         // maximizando o navegador
