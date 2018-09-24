@@ -13,7 +13,6 @@ import static org.junit.Assert.assertEquals;
 public class Site2ApplicationTests {
     public static String driverpath = "/root/chromedriver";
 
-
     WebDriver driver = null;
 
     @Before
