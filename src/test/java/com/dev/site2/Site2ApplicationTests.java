@@ -16,7 +16,7 @@ public class Site2ApplicationTests {
     public void abrirNavegador() {
         System.out.println("abrindo navegador");
         // setando caminho do driver
-        System.setProperty("webdriver.chrome.driver", "././drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         // iniciando webdriver do chrome
         driver = new ChromeDriver();
         // maximizando o navegador
