@@ -203,24 +203,24 @@
         <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
     </div>
 
-    <form class="w3-container" action="/action_page.php" target="_blank">
+    <form class="w3-container" id="form" action="/action_page.php" target="_blank">
         <div class="w3-section">
             <label>Nome</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+            <input class="w3-input w3-border w3-hover-border-black" id="input_name" style="width:100%;" type="text" name="Name" required>
         </div>
         <div class="w3-section">
             <label>Email</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+            <input class="w3-input w3-border w3-hover-border-black" id="input_email" style="width:100%;" type="email" name="Email" required>
         </div>
         <div class="w3-section">
             <label>Assunto</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+            <input class="w3-input w3-border w3-hover-border-black" id="input_assunto" style="width:100%;" name="Subject" required>
         </div>
         <div class="w3-section">
             <label>Mensagem</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
+            <input class="w3-input w3-border w3-hover-border-black" id="input_mensagem" style="width:100%;" name="Message" required>
         </div>
-        <button type="submit" class="w3-button w3-block w3-black">Enviar</button>
+        <button type="submit" id="submit_button" class="w3-button w3-block w3-black">Enviar</button>
     </form>
 
 </div>

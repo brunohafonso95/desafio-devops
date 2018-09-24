@@ -46,3 +46,10 @@ function smoothScroll(e) {
         behavior: 'smooth'
     });
 }
+
+function sendForm(e) {
+    e.preventDefault();
+    document.querySelector('#form').reset();
+}
+
+document.querySelector("#submit_button").addEventListener('click', sendForm);
