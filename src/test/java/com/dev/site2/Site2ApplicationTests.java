@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.junit.Assert.assertEquals;
 
 
@@ -18,7 +18,7 @@ public class Site2ApplicationTests {
 
     @BeforeClass
     public static void setupClass() {
-        WebDriverManager.chromedriver().proxy("proxylatam.indra.es:8080").setup();
+        WebDriverManager.firefoxdriver().proxy("proxylatam.indra.es:8080").setup();
     }
 
     @Before
@@ -27,7 +27,7 @@ public class Site2ApplicationTests {
         // setando caminho do driver
         //System.setProperty("webdriver.chrome.driver", driverpath);
         // iniciando webdriver do chrome
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         // maximizando o navegador
         driver.manage().window().maximize();
         // acessando uma página no chrome
