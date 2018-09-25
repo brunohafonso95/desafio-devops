@@ -31,7 +31,7 @@ public class Site2ApplicationTests {
         // maximizando o navegador
         driver.manage().window().maximize();
         // acessando uma página no chrome
-        driver.get("http://localhost:8090");
+        driver.get("http://localhost:8080");
     }
 
     @After
