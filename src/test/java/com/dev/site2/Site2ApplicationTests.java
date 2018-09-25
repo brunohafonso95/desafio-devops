@@ -1,25 +1,31 @@
 package com.dev.site2;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import static org.junit.Assert.assertEquals;
 
 
 public class Site2ApplicationTests {
-    public static String driverpath = "/root/chromedriver";
+    public static String driverpath = "C:/Users/bhenriquea/drivers/chromedriver/chromedriver.exe";
 
     WebDriver driver = null;
+
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().proxy("proxylatam.indra.es:8080").setup();
+    }
 
     @Before
     public void abrirNavegador() {
         System.out.println("abrindo navegador");
         // setando caminho do driver
-        System.setProperty("webdriver.chrome.driver", driverpath);
+        //System.setProperty("webdriver.chrome.driver", driverpath);
         // iniciando webdriver do chrome
         driver = new ChromeDriver();
         // maximizando o navegador
