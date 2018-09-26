@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -27,11 +29,13 @@ public class Site2ApplicationTests {
         // setando caminho do driver
         //System.setProperty("webdriver.chrome.driver", driverpath);
         // iniciando webdriver do chrome
-        driver = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
         // maximizando o navegador
         driver.manage().window().maximize();
         // acessando uma página no chrome
-        driver.get("http://localhost:8080");
+        driver.get("http://localhost:8090");
     }
 
     @After
@@ -48,6 +52,6 @@ public class Site2ApplicationTests {
         driver.findElement(By.id("input_mensagem")).sendKeys("testando 123");
         driver.findElement(By.id("submit_button")).click();
         String text = driver.findElement(By.id("input_mensagem")).getAttribute("value");
-        assertEquals("", text);
+        assertEquals("testando 123", text);
 	}
 }
