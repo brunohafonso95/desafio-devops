@@ -41,7 +41,7 @@ public class Site2ApplicationTests {
     @After
     public void encerrar() {
         System.out.println("fechando navegador");
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
