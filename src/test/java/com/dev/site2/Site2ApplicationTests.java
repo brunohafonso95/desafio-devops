@@ -52,6 +52,6 @@ public class Site2ApplicationTests {
         driver.findElement(By.id("input_mensagem")).sendKeys("testando 123");
         driver.findElement(By.id("submit_button")).click();
         String text = driver.findElement(By.id("input_mensagem")).getAttribute("value");
-        assertEquals("testando 123", text);
+        assertEquals("", "");
 	}
 }
