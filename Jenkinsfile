@@ -44,11 +44,6 @@ pipeline {
             }
         }
         stage('#8 lighthouse reposrt de performance') {
-            agent {
-                docker {
-                    image 'node:8'
-                }
-            }
             steps {
                 sh 'npm install -g lighthouse'
                 sh 'lighthouse http://localhost:82 --view'
