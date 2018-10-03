@@ -47,6 +47,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:8'
+                }
             }
             steps {
                 sh 'npm install -g lighthouse'
