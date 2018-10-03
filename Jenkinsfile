@@ -8,7 +8,7 @@ pipeline {
        }
        stage('#2 SonarQube analise') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.56.101:9000 -Dsonar.login=d8c853725aeea36b3f275ad7549ad3b604d2859d'
+                sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=facc7b1269cff2c40f0460af3453767b97069041'
             }
        }
        stage('#3 Testes') { 
@@ -41,6 +41,24 @@ pipeline {
         stage('#7 Deploy') {
             steps {
                 sh 'docker run -d -p 82:8080 desafio-devops:1.0'
+            }
+        }
+        stage('#8 lighthouse reposrt de performance') {
+            agent {
+                docker {
+                    image 'node:8'
+            }
+            steps {
+                sh 'npm install -g lighthouse'
+                sh 'lighthouse http://localhost:82 --view'
+                publishHTML (target: [
+                  allowMissing: false,
+                  alwaysLinkToLastBuild: false,
+                  keepAll: true,
+                  reportDir: '.',
+                  reportFiles: 'lighthouse-report.html',
+                  reportName: "Lighthouse"
+                ])
             }
         }
     }
